@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net8.0": {}
+    "net8.0": {
+      "EmployeeManagement.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/EmployeeManagement.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/EmployeeManagement.Domain.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "EmployeeManagement.Domain/1.0.0": {
+      "type": "project",
+      "path": "../EmployeeManagement.Domain/EmployeeManagement.Domain.csproj",
+      "msbuildProject": "../EmployeeManagement.Domain/EmployeeManagement.Domain.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net8.0": []
+    "net8.0": [
+      "EmployeeManagement.Domain >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Romul\\.nuget\\packages\\": {}
@@ -31,7 +50,11 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\PROJETOS\\DoQR_teste\\EmployeeManagement\\EmployeeManagement.Domain\\EmployeeManagement.Domain.csproj": {
+              "projectPath": "C:\\PROJETOS\\DoQR_teste\\EmployeeManagement\\EmployeeManagement.Domain\\EmployeeManagement.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

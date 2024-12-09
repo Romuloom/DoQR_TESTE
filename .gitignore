@@ -1,0 +1,38 @@
+# Ignore arquivos e diretórios de build
+bin/
+obj/
+
+# Ignore arquivos de configuração locais e de usuário
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Ignore arquivos de log
+*.log
+
+# Ignore arquivos temporários
+*.tmp
+*.temp
+*.TMP
+*.TEMP
+
+# Ignore configurações do Visual Studio Code
+.vscode/
+.vscode/*
+.vs/
+
+# Ignore configurações de build específicas da máquina
+*.vspscc
+*.vssscc
+
+# Ignore dependências geradas automaticamente
+*.nuget/
+*.nupkg
+
+# Ignore arquivos específicos do sistema operacional
+.DS_Store
+Thumbs.db
+
+# Ignore dependências restauradas (se você restaurá-las no pipeline CI/CD)
+**/packages/
