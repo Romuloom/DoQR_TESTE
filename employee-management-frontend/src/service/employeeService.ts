@@ -35,7 +35,11 @@ export const updateEmployee = async (
   id: string,
   employee: Employee
 ): Promise<void> => {
-  await axios.put(`${API_URL}/${id}`, employee);
+  await axios.put(`http://localhost:5114/api/Employee/${id}`, employee, {
+    headers: {
+      "Content-Type": "application/json", // Garante que os dados sejam enviados como JSON
+    },
+  });
 };
 
 export const deleteEmployee = async (id: string): Promise<void> => {
