@@ -21,7 +21,7 @@ namespace EmployeeManagement.Application.Services
 
         public async Task AddEmployeeAsync(Employee employee)
         {
-            Validação antes de adicionar
+
             if (string.IsNullOrWhiteSpace(employee.Name) || string.IsNullOrWhiteSpace(employee.Email))
             {
                 throw new ArgumentException("Nome e Email são obrigatórios.");
@@ -33,7 +33,7 @@ namespace EmployeeManagement.Application.Services
 
         public async Task UpdateEmployeeAsync(Employee employee)
         {
-            Validação antes de atualizar
+
             if (string.IsNullOrWhiteSpace(employee.Name) || string.IsNullOrWhiteSpace(employee.Email))
             {
                 throw new ArgumentException("Nome e Email são obrigatórios.");
