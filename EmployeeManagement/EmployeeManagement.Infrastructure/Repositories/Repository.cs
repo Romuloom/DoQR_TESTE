@@ -7,10 +7,10 @@ namespace EmployeeManagement.Infrastructure.Repositories
 {
     public class Repository<T> : IRepository<T> where T : class
     {
-        private readonly EmployeeDbContext _context; // Usando o contexto específico
+        private readonly EmployeeDbContext _context; Usando o contexto específico
         private readonly DbSet<T> _dbSet;
 
-        public Repository(EmployeeDbContext context) // Alterado para EmployeeDbContext
+        public Repository(EmployeeDbContext context) Alterado para EmployeeDbContext
         {
             _context = context;
             _dbSet = context.Set<T>();

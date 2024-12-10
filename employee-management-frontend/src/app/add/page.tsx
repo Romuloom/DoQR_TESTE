@@ -10,19 +10,18 @@ const AddPage: React.FC = () => {
 
   const handleSubmit = async (data: any) => {
     try {
-      // Ajustar os dados antes de enviar
       const formattedData = {
         ...data,
-        cpf: data.cpf.replace(/[^\d]/g, ""), // Remove pontos e traços do CPF
-        birthDate: new Date(data.birthDate).toISOString(), // Converte para ISO
+        cpf: data.cpf.replace(/[^\d]/g, ""),
+        birthDate: new Date(data.birthDate).toISOString(), 
       };
 
       console.log("Dados enviados para criação:", formattedData);
 
-      // Envia os dados formatados para o backend
+    
       await createEmployee(formattedData);
 
-      // Redireciona para a página inicial após o sucesso
+      
       router.push("/");
     } catch (error) {
       console.error("Erro ao cadastrar funcionário:", error);
@@ -33,8 +32,8 @@ const AddPage: React.FC = () => {
   };
 
   return (
-    <div className="bg-gray-100 min-h-screen flex items-center justify-center">
-      <div className="max-w-4xl w-full">
+    <div className="w-full mt-11">
+      <div>
         <EmployeeForm onSubmit={handleSubmit} />
       </div>
     </div>

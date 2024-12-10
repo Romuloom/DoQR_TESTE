@@ -5,6 +5,6 @@ export interface Employee {
   cpf: string;
   phone: string;
   birthDate: string;
-  contractType: "CLT" | "PJ"; // Tipo Contratação
+  contractType: "CLT" | "PJ";
   status: "Ativo" | "Inativo";
 }

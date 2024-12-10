@@ -9,13 +9,13 @@ namespace EmployeeManagement.Infrastructure.Data
     {
         public EmployeeDbContext CreateDbContext(string[] args)
         {
-            // Carregar a configuração do arquivo appsettings.json
+            Carregar a configuração do arquivo appsettings.json
             var configuration = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json") // Ou appsettings.Development.json, dependendo do ambiente
+                .AddJsonFile("appsettings.json") Ou appsettings.Development.json, dependendo do ambiente
                 .Build();
 
-            // Configurar o DbContext com a string de conexão
+            Configurar o DbContext com a string de conexão
             var optionsBuilder = new DbContextOptionsBuilder<EmployeeDbContext>();
             var connectionString = configuration.GetConnectionString("DefaultConnection");
 

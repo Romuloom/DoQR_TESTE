@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { Navbar } from "@/components/Navbar";
 import { Header } from "@/components/Header";
 import { Table } from "@/components/Tabela";
 import {
@@ -32,7 +31,6 @@ const Home: React.FC = () => {
     fetchEmployees();
   }, []);
 
-  // Função para busca automática
   const handleSearch = async (term: string) => {
     if (debounceTimeout) {
       clearTimeout(debounceTimeout);
@@ -41,18 +39,16 @@ const Home: React.FC = () => {
     const timeout = setTimeout(async () => {
       try {
         if (term.trim() === "" || term.length < 3) {
-          // Busca todos os funcionários se o termo for vazio ou menor que 3 caracteres
           const data = await getAllEmployees();
           setEmployees(data);
         } else {
-          // Busca funcionários pelo termo
           const data = await searchEmployeesByName(term);
           setEmployees(data);
         }
       } catch (error) {
         console.error("Erro ao buscar funcionários:", error);
       }
-    }, 300); // 300ms de debounce
+    }, 300); 
 
     setDebounceTimeout(timeout);
   };
@@ -74,12 +70,11 @@ const Home: React.FC = () => {
   };
 
   return (
-    <div className="bg-white min-h-screen w-screen">
-      <Navbar />
-      <main className=" mx-auto py-8  px-32">
+    <div className="bg-white mt-11">
+      <main className="">
         <Header
           onAddEmployee={() => router.push("/add")}
-          onSearch={handleSearch} // Passa a função de busca para o Header
+          onSearch={handleSearch}
         />
         <div className="mt-8">
           <Table

@@ -8,7 +8,7 @@ export const employeeSchema = z.object({
     .regex(/^\d{11}$/, "CPF deve conter 11 números.")
     .transform((cpf) =>
       cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4")
-    ), // Formata o CPF
+    ),
   phone: z.string().regex(/^\d{10,11}$/, "Número de celular inválido."),
   birthDate: z
     .string()
