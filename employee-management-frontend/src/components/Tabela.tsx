@@ -34,10 +34,12 @@ export const Table: React.FC<TableProps> = ({
               <td className="p-4">{employee.email}</td>
               <td className="p-4">{employee.cpf}</td>
               <td className="p-4">{employee.phone}</td>
-              <td className="p-4">{employee.birthDate}</td>
+              <td className="p-4">
+                {new Date(employee.birthDate).toLocaleDateString("pt-BR")}
+              </td>
               <td className="p-4">{employee.employmentType}</td>
               <td
-                className={`p-4 ${
+                className={`p-4 font-bold ${
                   employee.status === "Ativo"
                     ? "text-green-500"
                     : "text-red-500"
@@ -47,16 +49,16 @@ export const Table: React.FC<TableProps> = ({
               </td>
               <td className="p-4 text-center">
                 <button
-                  onClick={() => onEdit(employee.id!)}
-                  className="text-blue-500 hover:underline"
+                  onClick={() => employee.id && onEdit(employee.id)}
+                  className="text-blue-500 hover:underline hover:text-blue-700"
                 >
-                  ✏️
+                  ✏️ Editar
                 </button>
                 <button
-                  onClick={() => onDelete(employee.id!)}
-                  className="text-red-500 ml-4 hover:underline"
+                  onClick={() => employee.id && onDelete(employee.id)}
+                  className="text-red-500 ml-4 hover:underline hover:text-red-700"
                 >
-                  🗑️
+                  🗑️ Excluir
                 </button>
               </td>
             </tr>

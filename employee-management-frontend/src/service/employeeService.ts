@@ -43,5 +43,9 @@ export const updateEmployee = async (
 };
 
 export const deleteEmployee = async (id: string): Promise<void> => {
-  await axios.delete(`${API_URL}/${id}`);
+  await axios.delete(`http://localhost:5114/api/Employee/${id}`, {
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
 };

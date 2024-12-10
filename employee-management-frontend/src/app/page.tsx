@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { useRouter } from "next/navigation"; // Para navegação no App Router do Next.js
+import { useRouter } from "next/navigation";
 import { Navbar } from "@/components/Navbar";
 import { Header } from "@/components/Header";
 import { Table } from "@/components/Tabela";
@@ -10,7 +10,7 @@ import { Employee } from "@/interfaces/Employee";
 
 const Home: React.FC = () => {
   const [employees, setEmployees] = useState<Employee[]>([]);
-  const router = useRouter(); // Hook para navegação
+  const router = useRouter();
 
   useEffect(() => {
     const fetchEmployees = async () => {
@@ -25,33 +25,32 @@ const Home: React.FC = () => {
     fetchEmployees();
   }, []);
 
-  const handleDeleteEmployee = async (id: string) => {
+  const handleDelete = async (id: string) => {
+    const confirmDelete = window.confirm(
+      "Tem certeza que deseja excluir este funcionário?"
+    );
+    if (!confirmDelete) return;
+
     try {
-      await deleteEmployee(id);
-      setEmployees((prev) => prev.filter((employee) => employee.id !== id));
+      await deleteEmployee(id); // Chama a API para deletar o funcionário
+      setEmployees((prev) => prev.filter((employee) => employee.id !== id)); // Remove o funcionário da lista local
+      alert("Funcionário deletado com sucesso.");
     } catch (error) {
       console.error("Erro ao deletar funcionário:", error);
+      alert("Erro ao deletar funcionário. Tente novamente.");
     }
-  };
-
-  const handleAddEmployee = () => {
-    router.push("/add"); // Redireciona para a página de cadastro
-  };
-
-  const handleEditEmployee = (id: string) => {
-    router.push(`/edit/${id}`); // Redireciona para a página de edição
   };
 
   return (
     <div className="bg-gray-100 min-h-screen">
       <Navbar />
       <main className="container mx-auto px-6 py-8">
-        <Header onAddEmployee={handleAddEmployee} />
+        <Header onAddEmployee={() => router.push("/add")} />
         <div className="mt-8">
           <Table
             employees={employees}
-            onEdit={handleEditEmployee} // Atualizamos para usar o handler de edição
-            onDelete={handleDeleteEmployee}
+            onEdit={(id) => router.push(`/edit/${id}`)} // Redireciona para editar funcionário
+            onDelete={handleDelete} // Passa a função de deletar
           />
         </div>
       </main>
