@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import { useRouter } from "next/navigation"; // Para navegação no App Router do Next.js
 import { Navbar } from "@/components/Navbar";
 import { Header } from "@/components/Header";
 import { Table } from "@/components/Tabela";
@@ -9,6 +10,7 @@ import { Employee } from "@/interfaces/Employee";
 
 const Home: React.FC = () => {
   const [employees, setEmployees] = useState<Employee[]>([]);
+  const router = useRouter(); // Hook para navegação
 
   useEffect(() => {
     const fetchEmployees = async () => {
@@ -32,15 +34,23 @@ const Home: React.FC = () => {
     }
   };
 
+  const handleAddEmployee = () => {
+    router.push("/add"); // Redireciona para a página de cadastro
+  };
+
+  const handleEditEmployee = (id: string) => {
+    router.push(`/edit/${id}`); // Redireciona para a página de edição
+  };
+
   return (
     <div className="bg-gray-100 min-h-screen">
       <Navbar />
       <main className="container mx-auto px-6 py-8">
-        <Header onAddEmployee={() => console.log("Adicionar funcionário")} />
+        <Header onAddEmployee={handleAddEmployee} />
         <div className="mt-8">
           <Table
             employees={employees}
-            onEdit={(id) => console.log(`Editar funcionário com ID: ${id}`)}
+            onEdit={handleEditEmployee} // Atualizamos para usar o handler de edição
             onDelete={handleDeleteEmployee}
           />
         </div>

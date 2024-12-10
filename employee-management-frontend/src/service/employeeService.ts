@@ -23,7 +23,11 @@ export const searchEmployeesByName = async (
 };
 
 export const createEmployee = async (employee: Employee): Promise<Employee> => {
-  const response = await axios.post<Employee>(API_URL, employee);
+  const response = await axios.post(API_URL, employee, {
+    headers: {
+      "Content-Type": "application/json", // Garante que o backend reconheça os dados como JSON
+    },
+  });
   return response.data;
 };
 
