@@ -38,27 +38,29 @@ export const Table: React.FC<TableProps> = ({
                 {new Date(employee.birthDate).toLocaleDateString("pt-BR")}
               </td>
               <td className="p-4">{employee.employmentType}</td>
-              <td
-                className={`p-4 font-bold ${
-                  employee.status === "Ativo"
-                    ? "text-green-500"
-                    : "text-red-500"
-                }`}
-              >
-                {employee.status}
+              <td className="p-4 text-center">
+                <span
+                  className={`px-3 py-1 rounded-full text-sm font-medium ${
+                    employee.status === "Ativo"
+                      ? "bg-green-100 text-green-700"
+                      : "bg-red-100 text-red-700"
+                  }`}
+                >
+                  {employee.status}
+                </span>
               </td>
               <td className="p-4 text-center">
                 <button
                   onClick={() => employee.id && onEdit(employee.id)}
                   className="text-blue-500 hover:underline hover:text-blue-700"
                 >
-                  ✏️ Editar
+                  ✏️
                 </button>
                 <button
                   onClick={() => employee.id && onDelete(employee.id)}
                   className="text-red-500 ml-4 hover:underline hover:text-red-700"
                 >
-                  🗑️ Excluir
+                  🗑️
                 </button>
               </td>
             </tr>

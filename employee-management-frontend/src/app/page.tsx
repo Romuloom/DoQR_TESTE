@@ -5,11 +5,18 @@ import { useRouter } from "next/navigation";
 import { Navbar } from "@/components/Navbar";
 import { Header } from "@/components/Header";
 import { Table } from "@/components/Tabela";
-import { getAllEmployees, deleteEmployee } from "@/service/employeeService";
+import {
+  getAllEmployees,
+  searchEmployeesByName,
+  deleteEmployee,
+} from "@/service/employeeService";
 import { Employee } from "@/interfaces/Employee";
 
 const Home: React.FC = () => {
   const [employees, setEmployees] = useState<Employee[]>([]);
+  const [debounceTimeout, setDebounceTimeout] = useState<NodeJS.Timeout | null>(
+    null
+  );
   const router = useRouter();
 
   useEffect(() => {
@@ -25,6 +32,31 @@ const Home: React.FC = () => {
     fetchEmployees();
   }, []);
 
+  // Função para busca automática
+  const handleSearch = async (term: string) => {
+    if (debounceTimeout) {
+      clearTimeout(debounceTimeout);
+    }
+
+    const timeout = setTimeout(async () => {
+      try {
+        if (term.trim() === "" || term.length < 3) {
+          // Busca todos os funcionários se o termo for vazio ou menor que 3 caracteres
+          const data = await getAllEmployees();
+          setEmployees(data);
+        } else {
+          // Busca funcionários pelo termo
+          const data = await searchEmployeesByName(term);
+          setEmployees(data);
+        }
+      } catch (error) {
+        console.error("Erro ao buscar funcionários:", error);
+      }
+    }, 300); // 300ms de debounce
+
+    setDebounceTimeout(timeout);
+  };
+
   const handleDelete = async (id: string) => {
     const confirmDelete = window.confirm(
       "Tem certeza que deseja excluir este funcionário?"
@@ -32,8 +64,8 @@ const Home: React.FC = () => {
     if (!confirmDelete) return;
 
     try {
-      await deleteEmployee(id); // Chama a API para deletar o funcionário
-      setEmployees((prev) => prev.filter((employee) => employee.id !== id)); // Remove o funcionário da lista local
+      await deleteEmployee(id);
+      setEmployees((prev) => prev.filter((employee) => employee.id !== id));
       alert("Funcionário deletado com sucesso.");
     } catch (error) {
       console.error("Erro ao deletar funcionário:", error);
@@ -42,15 +74,18 @@ const Home: React.FC = () => {
   };
 
   return (
-    <div className="bg-gray-100 min-h-screen">
+    <div className="bg-white min-h-screen w-screen">
       <Navbar />
-      <main className="container mx-auto px-6 py-8">
-        <Header onAddEmployee={() => router.push("/add")} />
+      <main className=" mx-auto py-8  px-32">
+        <Header
+          onAddEmployee={() => router.push("/add")}
+          onSearch={handleSearch} // Passa a função de busca para o Header
+        />
         <div className="mt-8">
           <Table
             employees={employees}
-            onEdit={(id) => router.push(`/edit/${id}`)} // Redireciona para editar funcionário
-            onDelete={handleDelete} // Passa a função de deletar
+            onEdit={(id) => router.push(`/edit/${id}`)}
+            onDelete={handleDelete}
           />
         </div>
       </main>
