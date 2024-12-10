@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "39RFSBIE2fI=",
+  "dgSpecHash": "f3lhVL5LBxY=",
   "success": true,
-  "projectFilePath": "C:\\PROJETOS\\DoQR_teste\\EmployeeManagement\\EmployeeManagement.API\\EmployeeManagement.API.csproj",
+  "projectFilePath": "C:\\PROJETOS\\DoQR_TESTE\\EmployeeManagement\\EmployeeManagement.API\\EmployeeManagement.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Romul\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Romul\\.nuget\\packages\\microsoft.aspnetcore.openapi\\8.0.8\\microsoft.aspnetcore.openapi.8.0.8.nupkg.sha512",

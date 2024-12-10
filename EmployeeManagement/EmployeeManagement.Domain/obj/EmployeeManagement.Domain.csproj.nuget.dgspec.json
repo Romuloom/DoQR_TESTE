@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\PROJETOS\\DoQR_teste\\EmployeeManagement\\EmployeeManagement.Domain\\EmployeeManagement.Domain.csproj": {}
+    "C:\\PROJETOS\\DoQR_TESTE\\EmployeeManagement\\EmployeeManagement.Domain\\EmployeeManagement.Domain.csproj": {}
   },
   "projects": {
-    "C:\\PROJETOS\\DoQR_teste\\EmployeeManagement\\EmployeeManagement.Domain\\EmployeeManagement.Domain.csproj": {
+    "C:\\PROJETOS\\DoQR_TESTE\\EmployeeManagement\\EmployeeManagement.Domain\\EmployeeManagement.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\PROJETOS\\DoQR_teste\\EmployeeManagement\\EmployeeManagement.Domain\\EmployeeManagement.Domain.csproj",
+        "projectUniqueName": "C:\\PROJETOS\\DoQR_TESTE\\EmployeeManagement\\EmployeeManagement.Domain\\EmployeeManagement.Domain.csproj",
         "projectName": "EmployeeManagement.Domain",
-        "projectPath": "C:\\PROJETOS\\DoQR_teste\\EmployeeManagement\\EmployeeManagement.Domain\\EmployeeManagement.Domain.csproj",
+        "projectPath": "C:\\PROJETOS\\DoQR_TESTE\\EmployeeManagement\\EmployeeManagement.Domain\\EmployeeManagement.Domain.csproj",
         "packagesPath": "C:\\Users\\Romul\\.nuget\\packages\\",
-        "outputPath": "C:\\PROJETOS\\DoQR_teste\\EmployeeManagement\\EmployeeManagement.Domain\\obj\\",
+        "outputPath": "C:\\PROJETOS\\DoQR_TESTE\\EmployeeManagement\\EmployeeManagement.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Romul\\AppData\\Roaming\\NuGet\\NuGet.Config"

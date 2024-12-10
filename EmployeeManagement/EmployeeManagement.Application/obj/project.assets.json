@@ -32,11 +32,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\PROJETOS\\DoQR_teste\\EmployeeManagement\\EmployeeManagement.Application\\EmployeeManagement.Application.csproj",
+      "projectUniqueName": "C:\\PROJETOS\\DoQR_TESTE\\EmployeeManagement\\EmployeeManagement.Application\\EmployeeManagement.Application.csproj",
       "projectName": "EmployeeManagement.Application",
-      "projectPath": "C:\\PROJETOS\\DoQR_teste\\EmployeeManagement\\EmployeeManagement.Application\\EmployeeManagement.Application.csproj",
+      "projectPath": "C:\\PROJETOS\\DoQR_TESTE\\EmployeeManagement\\EmployeeManagement.Application\\EmployeeManagement.Application.csproj",
       "packagesPath": "C:\\Users\\Romul\\.nuget\\packages\\",
-      "outputPath": "C:\\PROJETOS\\DoQR_teste\\EmployeeManagement\\EmployeeManagement.Application\\obj\\",
+      "outputPath": "C:\\PROJETOS\\DoQR_TESTE\\EmployeeManagement\\EmployeeManagement.Application\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Romul\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -51,8 +51,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\PROJETOS\\DoQR_teste\\EmployeeManagement\\EmployeeManagement.Domain\\EmployeeManagement.Domain.csproj": {
-              "projectPath": "C:\\PROJETOS\\DoQR_teste\\EmployeeManagement\\EmployeeManagement.Domain\\EmployeeManagement.Domain.csproj"
+            "C:\\PROJETOS\\DoQR_TESTE\\EmployeeManagement\\EmployeeManagement.Domain\\EmployeeManagement.Domain.csproj": {
+              "projectPath": "C:\\PROJETOS\\DoQR_TESTE\\EmployeeManagement\\EmployeeManagement.Domain\\EmployeeManagement.Domain.csproj"
             }
           }
         }
