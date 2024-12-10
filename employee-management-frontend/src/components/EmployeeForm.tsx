@@ -38,11 +38,7 @@ export const EmployeeForm: React.FC<EmployeeFormProps> = ({
   return (
     <div className=" w-full border shadow-md rounded-lg border-gray-300 p-5">
       <main className="w-full">
-        <div className="w-full">
-          <h2 className="text-2xl font-bold text-gray-800 mb-4">
-            {initialData ? "Editar Funcionário" : "Cadastrar Funcionário"}
-          </h2>
-          <p className="text-sm text-gray-500 mb-6">Empresa DoQR Tecnologia</p>
+        
 
           <form onSubmit={handleSubmit} className="grid grid-cols-2 gap-4">
             {/* Nome */}
@@ -156,8 +152,7 @@ export const EmployeeForm: React.FC<EmployeeFormProps> = ({
               </button>
             </div>
           </form>
-        </div>
       </main>
-    </div>
+      </div>
   );
 };

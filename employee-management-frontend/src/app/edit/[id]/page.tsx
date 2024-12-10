@@ -56,7 +56,17 @@ const EditPage: React.FC = () => {
 
   return (
     <div className="w-full mt-11">
+      <button
+        className="mb-6 flex items-center text-purple-600 font-medium hover:underline"
+        onClick={() => router.push("/")}
+      >
+        <span className="mr-2 text-xl">←</span> Voltar
+      </button>
       <div>
+        <h2 className="text-2xl font-bold text-gray-800 mb-4">
+          Editar Funcionário
+        </h2>
+        <p className="text-sm text-gray-500 mb-6">Empresa DoQR Tecnologia</p>
         {employee && (
           <EmployeeForm onSubmit={handleSubmit} initialData={employee} />
         )}{" "}

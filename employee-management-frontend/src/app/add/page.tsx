@@ -34,7 +34,19 @@ const AddPage: React.FC = () => {
   return (
     <div className="w-full mt-11">
       <div>
-        <EmployeeForm onSubmit={handleSubmit} />
+        <button
+          className="mb-6 flex items-center text-purple-600 font-medium hover:underline"
+          onClick={() => router.push("/")}
+        >
+          <span className="mr-2 text-xl">←</span> Voltar
+        </button>
+        <div className="w-full">
+          <h2 className="text-2xl font-bold text-gray-800 mb-4">
+            Cadastrar Funcionário
+          </h2>
+          <p className="text-sm text-gray-500 mb-6">Empresa DoQR Tecnologia</p>
+          <EmployeeForm onSubmit={handleSubmit} />
+        </div>
       </div>
     </div>
   );
